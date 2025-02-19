@@ -23,7 +23,8 @@
         2. configure ejs `app.set("view engine", "ejs")`
         3. create a `views` folder
         4. create a `ejs` file inside that 
-        5. convert `send` to `render` => make sure that while rendering that the file is from views folder and don't mention .ejs in the render function
+        5. convert `send` to `render` => make sure that while rendering that the
+         file is from views folder and don't mention .ejs in the render function
 
 
 ## template engines 
