@@ -28,10 +28,10 @@
 
 
 ## template engines 
-    - pug
-    - ejs (very very similar to html)
-    - handlebars
-    - jade
+        - pug
+        - ejs (very very similar to html)
+        - handlebars
+        - jade
 
 
 ## For settng up static files
