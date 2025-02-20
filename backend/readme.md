@@ -23,6 +23,13 @@ ejs setup
 5. convert `send` to `render` => make sure that while rendering that the file is from views folder and don't mention .ejs in the render function
 
 
+pug setup
+1. install ejs using `npm i pug`
+2. configure pug `app.set("view engine", "pug")`
+3. create a `views` folder
+4. create a `pug` file inside that 
+5. convert `send` to `render` => make sure that while rendering that the file is from views folder and don't mention .pug in the render function
+
 template engines 
 - pug
 - ejs (very very similar to html)
