@@ -1,7 +1,6 @@
 import express from 'express';
 import cookieParser from 'cookie-parser';
 import jwt from 'jsonwebtoken';
-import bcrypt from 'bcrypt';
 import dotenv from 'dotenv';
 
 dotenv.config();
@@ -13,7 +12,7 @@ app.use(cookieParser());
 
 app.get("/", function(req, res) {
   let token = jwt.sign({ email: "sumaya@gmail.com" }, secretKey);
-  res.cookie("token", token);
+  res.cookie("token", token); // set cookie
   res.send("done");
 });
 
