@@ -1,0 +1,3 @@
+## why cookies are used in website
+
+Cookies are small pieces of text sent to your browser by a website you visit. They help that website remember information about your visit, which can both make it easier to visit the site again and make the site more useful to you. Similar technologies, including unique identifiers used to identify an app or device, pixel tags, and local storage, can perform the same function. 

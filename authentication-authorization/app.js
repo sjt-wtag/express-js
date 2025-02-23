@@ -1,25 +1,36 @@
-const express = require('express');
-const app = express();
-const cookieParser = require('cookie-parser')
-const bcrypt = require('bcrypt')
-const saltRounds = 10;
-const myPlaintextPassword = 's0/\/\P4$$w0rD';
-const someOtherPlaintextPassword = 'not_bacon';
+import express from 'express';
+import cookieParser from 'cookie-parser';
+import jwt from 'jsonwebtoken';
+import bcrypt from 'bcrypt';
+import dotenv from 'dotenv';
 
+dotenv.config();
+
+const secretKey = process.env.SECRET_KEY;
+const app = express();
 
 app.use(cookieParser());
 
-app.get("/", function(req, res){
-    bcrypt.genSalt(saltRounds, function(err, salt) {
-        bcrypt.hash("habijabi", salt, function(err, hash) {
-            console.log(hash)
-        });
-    });
-})
+app.get("/", function(req, res) {
+  let token = jwt.sign({ email: "sumaya@gmail.com" }, secretKey);
+  res.cookie("token", token);
+  res.send("done");
+});
 
-// app.get("/read", function(req, res){
-//     console.log(req.cookies);
-//     res.send("read page");
-// })
+app.get("/read", function(req, res) {
+  const token = req.cookies.token;
+  console.log(token)
+  const decodedData =jwt.verify(token, secretKey);
+  console.log("decoded data ", decodedData);
 
-app.listen(3000);
+  jwt.verify(token, secretKey, function(err, decoded) {
+    if (err) {
+      return res.status(500).send("Failed to authenticate token");
+    }
+    res.send(decoded);
+  });
+});
+
+app.listen(3000, () => {
+  console.log("Server is running on port 3000");
+});
