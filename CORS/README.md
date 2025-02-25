@@ -1,2 +1,0 @@
-## CORS
-Cross-Origin Resource Sharing (CORS) is a mechanism used to overcome the limitations imposed by the Same Origin Policy. CORS allows a web browser to relax the restrictions and grant access to its resources for requests coming from a different origin. It is an HTTP header-based mechanism.
